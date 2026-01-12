@@ -147,7 +147,7 @@ class Plotter:
         plt.grid(True, alpha=0.7)
         plt.gca().set_aspect('equal', adjustable='box')
         plt.xlim(0, 10)
-        plt.ylim(0, 55)
+        plt.ylim(0, 150)
         plt.tight_layout()
         plt.show()
 
@@ -218,10 +218,10 @@ def compute_trajectories(body, integrator, t_start, t_end, dt, step=20, save_eve
 
 
 def main():
-    t_start = 1.0
+    t_start = 0.5
     t_end = 1.5
     dt = 0.005
-    times = [1.0, 1.25, 1.5]
+    times = [0.5, 1.0, 1.25, 1.5]
 
     A = lambda t: math.log(t) #Здесь мы реализуем наши функции через лямбда-функции. Это по факту для упрощения работы. Это то же самое, что если бы мы писали полноценную функцию:Pythondef A(t):; if t > 0:; return math.log(t); else:; return 0. Но вместо 5 строк — всего одна. Добавлена защита if t > 0 else 0, чтобы не было ошибки логарифма от нуля или отрицательного числа
     B = lambda t: math.exp(t)
