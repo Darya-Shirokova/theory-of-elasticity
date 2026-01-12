@@ -153,7 +153,7 @@ class Plotter:
         plt.grid(True, alpha=0.7)
         plt.gca().set_aspect('equal', adjustable='box')
         plt.xlim(0, 10)
-        plt.ylim(0, 55)
+        plt.ylim(0, 150)
         plt.tight_layout()
         plt.show()
 
@@ -230,10 +230,10 @@ def compute_trajectories(body, integrator, t_start, t_end, dt, step=20, save_eve
 
 # --- main.py ---
 def main():
-    t_start = 1.0
+    t_start = 0.5
     t_end = 1.5
     dt = 0.005
-    times = [1.0, 1.25, 1.5]
+    times = [0.5, 1.0, 1.25, 1.5]
 
     A = lambda t: math.log(t) 
     B = lambda t: math.exp(t)
@@ -265,5 +265,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
